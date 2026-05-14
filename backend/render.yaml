@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: cervixai-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --timeout 120 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: FLASK_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://your-app.vercel.app   # Update after Vercel deploy
+      - key: UPLOAD_FOLDER
+        value: /tmp/uploads
+      - key: DB_PATH
+        value: /tmp/users.db
+      - key: MODEL_DIR
+        value: model
+    disk:
+      name: cervixai-models
+      mountPath: /tmp/uploads
+      sizeGB: 1

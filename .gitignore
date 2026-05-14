@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Backend
+backend/__pycache__/
+backend/*.py[cod]
+backend/venv/
+backend/env/
+backend/.venv/
+backend/.env
+backend/uploads/
+backend/*.db
+backend/*.sqlite
+backend/*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.production
+
+# Misc
+*.log
+*.tmp
