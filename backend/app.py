@@ -55,7 +55,7 @@ DB_PATH = os.environ.get('DB_PATH', 'users.db')
 
 # CORS — allow Vercel frontend origin
 FRONTEND_URL = os.environ.get('https://cervical-cancer-detection.vercel.app', 'http://localhost:5173')
-CORS(app, origins=[https://cervical-cancer-detection.vercel.app, 'http://localhost:5173', 'http://localhost:3000'],
+CORS(app, origins=['https://cervical-cancer-detection.vercel.app', 'http://localhost:5173', 'http://localhost:3000'],
      supports_credentials=True)
 
 jwt = JWTManager(app)
